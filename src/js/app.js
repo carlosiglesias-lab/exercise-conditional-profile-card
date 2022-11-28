@@ -31,7 +31,12 @@ function render(variables = {}) {
   for (let element in variables) {
     variables[element] === null ? (variables[element] = "") : null;
   }
-  variables.country != "" ? (variables.city = variables.city + ", ") : null;
+  console.log(variables.city.search(","));
+  variables.country != "" &&
+  variables.city.search(",") == -1 &&
+  variables.city != ""
+    ? (variables.city = variables.city + ", ")
+    : null;
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
