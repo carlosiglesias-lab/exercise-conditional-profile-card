@@ -29,7 +29,7 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   for (let element in variables) {
-    variables[element] === null ? (variables[element] = "") : null;
+    variables[element] === null ? (variables[element] = element) : null;
   }
   console.log(variables.city.search(","));
   variables.country != "" &&
